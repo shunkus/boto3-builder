@@ -1,0 +1,21 @@
+.m-0 {
+  margin: 0 !important;
+}
+.mr-2 {
+  margin-right: 8px !important;
+}
+.mb-2 {
+  margin-bottom: 8px !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.pre-wrap {
+  white-space: pre-wrap !important;
+}
+.break-word {
+  word-break: break-word !important;
+}
+.break-all {
+  word-break: break-all !important;
+}
