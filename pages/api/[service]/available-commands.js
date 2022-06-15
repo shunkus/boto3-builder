@@ -11,18 +11,14 @@ export default async function (req, res) {
   const data = {};
   const commands = [];
   $("h2").remove();
-  $(
-    "#client > dl.class > dd > ul.simple > li > a.reference > code > span.pre"
-  ).each((index, elem) => {
+  $("#client > div > ul > li > a").each((index, elem) => {
     const command = {};
     command.name = $(elem).text().trim();
+    command.link = $(elem).attr("href");
     commands.push(command);
   });
   data.commands = commands;
   const turndownService = getTurndownService();
-  $("#client > dl.class > dd > .simple").prev("p").remove();
-  $("#client > dl.class > dd > .simple").remove();
-  $("#client > dl.class > dd > .method").remove();
   data.description = turndownService.turndown(
     $("#client > dl.class").html().trim()
   );

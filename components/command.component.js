@@ -72,23 +72,25 @@ function CommandComponent({ command, deleteCommand }) {
   const [examplesMarkdown, setExamplesMarkdown] = useState("");
   const [outputMarkdown, setOutputMarkdown] = useState("");
   const [loading, setLoading] = useState(false);
-  useEffect(async () => {
-    setLoading(true);
-    try {
-      const commandDetail = await getCommandDetail(
-        command.service,
-        command.name,
-        command.link
-      );
-      setUserCommand(`${commandDetail.synopsis}`);
-      setDescriptionMarkdown(commandDetail.description);
-      setOptionsMarkdown(commandDetail.options);
-      setExamplesMarkdown(commandDetail.examples);
-      setOutputMarkdown(commandDetail.output);
-    } catch (err) {
-      setUserError(err.message);
-    }
-    setLoading(false);
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      try {
+        const commandDetail = await getCommandDetail(
+          command.service,
+          command.name,
+          command.link
+        );
+        setUserCommand(`${commandDetail.synopsis}`);
+        setDescriptionMarkdown(commandDetail.description);
+        setOptionsMarkdown(commandDetail.options);
+        setExamplesMarkdown(commandDetail.examples);
+        setOutputMarkdown(commandDetail.output);
+      } catch (err) {
+        setUserError(err.message);
+      }
+      setLoading(false);
+    })();
   }, []);
   useEffect(() => {
     setTextToCopy(createTextToCopy(userCommand, userOutput, highlightLanguage));

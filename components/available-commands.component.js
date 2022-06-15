@@ -25,19 +25,21 @@ function AvailableCommandsComponent({ service, setActiveCommand }) {
   const [description, setDescription] = useState("");
   const [filteredCommands, setFilteredCommands] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(async () => {
-    setLoading(true);
-    if (!service) {
-      return false;
-    }
-    const res = await getCommands(service);
-    const commands = res.commands;
-    setCommands(commands);
-    if (res.description) {
-      setDescription(res.description);
-    }
-    setFilteredCommands(commands);
-    setLoading(false);
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      if (!service) {
+        return false;
+      }
+      const res = await getCommands(service);
+      const commands = res.commands;
+      setCommands(commands);
+      if (res.description) {
+        setDescription(res.description);
+      }
+      setFilteredCommands(commands);
+      setLoading(false);
+    })();
   }, [service]);
   if (!service) {
     return null;
@@ -75,7 +77,7 @@ function AvailableCommandsComponent({ service, setActiveCommand }) {
               onClick={() => {
                 setActiveCommand({
                   service: service.name,
-                  link: service.link,
+                  link: command.link,
                   name: command.name,
                   key: Math.random().toString(36).substring(7),
                 });

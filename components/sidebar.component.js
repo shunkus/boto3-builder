@@ -13,12 +13,14 @@ function SidebarComponent({ setService }) {
   const [services, setServices] = useState([]);
   const [filteredServices, setFilteredServices] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(async () => {
-    setLoading(true);
-    const services = await getServices();
-    setServices(services);
-    setFilteredServices(services);
-    setLoading(false);
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      const services = await getServices();
+      setServices(services);
+      setFilteredServices(services);
+      setLoading(false);
+    })();
   }, []);
   return (
     <Grid item xs={12} md={2}>
