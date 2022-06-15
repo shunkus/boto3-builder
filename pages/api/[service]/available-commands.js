@@ -26,5 +26,6 @@ export default async function (req, res) {
   data.description = turndownService.turndown(
     $("#client > dl.class").html().trim()
   );
+  res.setHeader("Cache-Control", "max-age=86400, s-maxage=86400");
   res.status(200).json(data);
 }

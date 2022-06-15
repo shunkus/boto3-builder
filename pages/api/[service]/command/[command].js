@@ -76,5 +76,6 @@ export default async function (req, res) {
     data.examples = turndownService.turndown(examplesHtml);
   }
   data.description = turndownService.turndown(dd.html().trim());
+  res.setHeader("Cache-Control", "max-age=86400, s-maxage=86400");
   res.status(200).json(data);
 }
