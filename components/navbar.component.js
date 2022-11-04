@@ -5,7 +5,7 @@ function NavbarComponent() {
   return (
     <AppBar position="sticky">
       <Toolbar variant="dense">
-        <Typography variant="h6" className="bold">
+        <Typography variant="h6" id="logo">
           Boto3 Builder
         </Typography>
       </Toolbar>
