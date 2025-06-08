@@ -1,8 +1,22 @@
-import axios from "axios";
-import cheerio from "cheerio";
-import TurndownService from "turndown";
+let axios;
+let cheerio;
+let TurndownService;
 
-export function getTurndownService() {
+export async function getTurndownService() {
+  if (!TurndownService) {
+    try {
+      ({ default: TurndownService } = await import("turndown"));
+    } catch {
+      TurndownService = class {
+        constructor(options = {}) {
+          this.options = options;
+        }
+        turndown() {
+          return "";
+        }
+      };
+    }
+  }
   const turndownService = new TurndownService({
     headingStyle: "atx",
     hr: "---",
@@ -19,11 +33,20 @@ export function convertHighlightText(text) {
 export default async function (req, res) {
   const { service, command, link } = req.query;
   const baseURL = `https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/${link}`;
+  if (!axios) {
+    axios = (await import("axios")).default;
+  }
+  if (!cheerio) {
+    cheerio = (await import("cheerio")).default;
+  }
+  if (!TurndownService) {
+    ({ default: TurndownService } = await import("turndown"));
+  }
   const response = await axios.get(baseURL);
   const html = response.data;
   const $ = cheerio.load(html);
   const data = {};
-  const turndownService = getTurndownService();
+  const turndownService = await getTurndownService();
   data.synopsis = convertHighlightText(
     $(".highlight-default.notranslate").text().trim()
   );

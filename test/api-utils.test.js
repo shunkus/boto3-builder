@@ -11,8 +11,8 @@ test('convertHighlightText removes brackets', () => {
 });
 
 // Test getTurndownService returns instance with expected options
-test('getTurndownService returns configured instance', () => {
-  const service = getTurndownService();
+test('getTurndownService returns configured instance', async () => {
+  const service = await getTurndownService();
   assert.equal(service.options.headingStyle, 'atx');
   assert.equal(service.options.hr, '---');
 });
