@@ -1,6 +1,6 @@
 import "@fontsource/roboto";
 import "../styles/globals.css";
-import { ThemeProvider, CssBaseline } from "@material-ui/core";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 import { theme } from "../styles/theme";
 import { useCronitor } from "@cronitorio/cronitor-rum-nextjs";
 

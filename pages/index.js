@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import Head from "next/head";
 import { useState } from "react";
 import AvailableCommandsComponent from "../components/available-commands.component";
