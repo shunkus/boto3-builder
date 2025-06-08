@@ -11,7 +11,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SearchFieldComponent from "./search-field.component";
 import CommandGuideComponent from "./command-guide.component";
-import { Info, InfoOutlined, InfoRounded } from "@mui/icons-material";
+import Info from "@mui/icons-material/Info";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
+import InfoRounded from "@mui/icons-material/InfoRounded";
 
 async function getCommands(service) {
   const response = await axios.get(`/api/${service.name}/available-commands`, {
