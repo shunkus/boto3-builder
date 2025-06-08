@@ -1,5 +1,5 @@
 import { FormControlLabel, IconButton } from "@mui/material";
-import FileCopy from "@mui/icons-material/FileCopy";
+import { FileCopy } from "@mui/icons-material";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 function CopyControlComponent({ textToCopy }) {

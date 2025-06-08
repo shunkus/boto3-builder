@@ -1,5 +1,5 @@
 import { FormControlLabel, IconButton } from "@mui/material";
-import Close from "@mui/icons-material/Close";
+import { Close } from "@mui/icons-material";
 
 function CloseControlComponent(props) {
   return (

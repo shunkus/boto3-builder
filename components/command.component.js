@@ -8,8 +8,8 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import Alert from "@mui/material/Alert";
+import { ExpandMore } from "@mui/icons-material";
+import { Alert } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
