@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List, ListItem, Grid, LinearProgress } from "@material-ui/core";
+import { List, ListItem, Grid, LinearProgress } from "@mui/material";
 import SidebarMenuItemComponent from "./sidebar/menuitem.component";
 import axios from "axios";
 import SearchFieldComponent from "./search-field.component";

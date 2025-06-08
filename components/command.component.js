@@ -7,9 +7,9 @@ import {
   LinearProgress,
   TextField,
   Typography,
-} from "@material-ui/core";
-import { ExpandMore } from "@material-ui/icons";
-import { Alert } from "@material-ui/lab";
+} from "@mui/material";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Alert from "@mui/material/Alert";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";

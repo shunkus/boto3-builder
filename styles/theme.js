@@ -1,4 +1,4 @@
-import { createTheme } from "@material-ui/core/styles";
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
@@ -10,24 +10,30 @@ export const theme = createTheme({
       main: "#FF9900",
     },
   },
-  overrides: {
+  components: {
     MuiAppBar: {
-      root: {
-        boxShadow: "none",
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+        },
       },
     },
     MuiButton: {
-      contained: {
-        borderRadius: 0,
-        boxShadow: "none",
-      },
-      containedSecondary: {
-        color: "#FFFFFF",
+      styleOverrides: {
+        contained: {
+          borderRadius: 0,
+          boxShadow: "none",
+        },
+        containedSecondary: {
+          color: "#FFFFFF",
+        },
       },
     },
     MuiAccordion: {
-      root: {
-        boxShadow: "none",
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+        },
       },
     },
   },
