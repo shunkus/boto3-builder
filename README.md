@@ -14,9 +14,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+ 
+The application exposes the following API endpoints:
+- `/api/services` - returns a list of available AWS services.
+- `/api/[service]/available-commands` - returns the commands for a given service (requires a `link` query parameter).
+- `/api/[service]/command/[command]` - returns details about a specific command (requires a `link` query parameter).
+- `/api/cli/execute` - POST endpoint to execute a command.
 
 ## Learn More
 
