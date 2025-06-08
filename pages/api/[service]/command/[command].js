@@ -12,7 +12,7 @@ export function getTurndownService() {
   return turndownService;
 }
 
-function convertHighlightText(text) {
+export function convertHighlightText(text) {
   return text.replace(/[\[\]]/g, "");
 }
 
