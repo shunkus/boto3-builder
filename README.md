@@ -17,11 +17,11 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
  
-The application exposes the following API endpoints:
-- `/api/services` - returns a list of available AWS services.
-- `/api/[service]/available-commands` - returns the commands for a given service (requires a `link` query parameter).
-- `/api/[service]/command/[command]` - returns details about a specific command (requires a `link` query parameter).
-- `/api/cli/execute` - POST endpoint to execute a command.
+The application exposes several API endpoints:
+- `GET /api/services` - lists available AWS services.
+- `GET /api/<service>/available-commands?link=...` - lists commands for a service.
+- `GET /api/<service>/command/<command>?link=...` - retrieves details for a command.
+- `POST /api/cli/execute` - executes a CLI command.
 
 ## Learn More
 
