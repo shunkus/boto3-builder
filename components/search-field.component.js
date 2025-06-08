@@ -1,6 +1,6 @@
 import React from "react";
-import { InputAdornment, TextField } from "@material-ui/core";
-import { Search } from "@material-ui/icons";
+import { InputAdornment, TextField } from "@mui/material";
+import Search from "@mui/icons-material/Search";
 
 function SearchFieldComponent(props) {
   return (

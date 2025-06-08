@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
-} from "@material-ui/core";
+} from "@mui/material";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 

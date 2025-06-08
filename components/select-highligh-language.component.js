@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, Select } from "@material-ui/core";
+import { FormControl, MenuItem, Select } from "@mui/material";
 import { availableLanguages } from "../constants/highlight";
 
 function SelectHighlightLanguageComponent({ language, onChange }) {

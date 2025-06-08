@@ -1,5 +1,5 @@
 import React from "react";
-import { ListItem, ListItemText, Typography } from "@material-ui/core";
+import { ListItem, ListItemText, Typography } from "@mui/material";
 
 function SidebarMenuItemComponent({ service, setService }) {
   return (
